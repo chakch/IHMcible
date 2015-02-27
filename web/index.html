@@ -1,0 +1,87 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <title>IHM Cible Documentaire</title>
+       
+        <script src="raphael.js" type="text/javascript" charset="utf-8"></script>
+        <script src="graffle.js" type="text/javascript" charset="utf-8"></script>
+        <script src="node.js" type="text/javascript" charset="utf-8"></script>
+
+
+        <style type="text/css" media="screen">
+            #container {
+                margin-left: auto;
+                margin-right: auto;
+                width: 90%;
+                background-color: #b0e0e6;
+            }
+            #holder {
+                -moz-border-radius: 10px;
+                -webkit-border-radius: 10px;
+                border: solid 1px #333;
+                background-color:whitesmoke; 
+                color:white; 
+                height: 80%;
+                width: 40%;
+                left: 8%;
+                top: 10%;
+                position: absolute;
+
+            }
+            #result {
+                -moz-border-radius: 10px;
+                -webkit-border-radius: 10px;
+                border: solid 1px #333;
+                background-color:whitesmoke; 
+  
+                height: 80%;
+                width: 40%;
+                right: 8%;
+                top: 10%;
+                position: absolute;
+            }
+            p {
+                text-align: left;
+            }
+            .headerText{
+                text-align: center;
+                color: blue;
+                position: absolute;
+                top:0px;
+                left: 50%
+            }
+            .headerBtn{
+                text-align: center;
+                color: blue;
+                position: absolute;
+                top:0px;
+            }
+            #btnSubmit{
+                position: absolute;
+                top:30%;
+                left: 49%;
+                width: auto;
+                height: auto;
+                color:blue
+            }
+        </style>
+    </head>
+    <body>
+        <p style="text-align: center">IHM Cible Documentaire</p>
+        <div id="container">
+            <div id ="holder">
+                <div class="headerText">Graph</div>
+                <button id="btnCreate" class="headerBtn" type="button" style="left:2px" onclick="createNode()">Create</button>
+            </div>
+            <button id="btnSubmit" type="button" onclick="submit()">>></button>
+            <div id ="result">
+                <div class="headerText">Resultat</div>
+                <button id="btnExport" class="headerBtn" type="button" style="right:2px" onclick="export()">Export</button>
+                <p id="docResult"></p>
+            </div>
+        </div>
+
+
+    </body>
+</html>
