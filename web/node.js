@@ -65,7 +65,15 @@ window.onload = function () {
             xmlHttp = new XMLHttpRequest();
             xmlHttp.open("GET", url, false);
             xmlHttp.send();
-            document.getElementById("docResult").innerHTML = xmlHttp.responseText;
+           // document.getElementById("docResult").innerHTML = xmlHttp.responseText;
+            var myArr = JSON.parse(xmlHttp.responseText);
+            for (i = 0; i < myArr.data.length; i++) {
+                if (!document.getElementById(myArr.data[i])) {
+                    document.getElementById("docResult").innerHTML+= "<h4>"+myArr.data[i]+"<h3>";
+                    console.log(myArr.data[i]);
+
+                }
+            }
 
             // http://23.97.213.185:8080/projetkm/Competence/consultant%20en%20SI
 //http://23.97.213.185:8080/projetkm/consultant%20en%20SI/SousSecteur/PepsiCo
